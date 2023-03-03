@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите X: ");
+        int X = scan.nextInt();
+        System.out.println("Введите N: ");
+        int N = scan.nextInt();
+        int result = 1 + X;
+        int currentFactorial;
+        for (int i = 2; i <= N; i++) {
+            currentFactorial = fact(i);
+            result += Math.pow(X,i) /currentFactorial;
+        }
+        System.out.println(result);
+    }
+
+    private static int fact(int number) {
+        int factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
